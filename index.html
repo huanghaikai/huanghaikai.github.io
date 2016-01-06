@@ -1,23 +1,31 @@
 ---
-layout: default
+layout: index
+title: John Doe
+tagline: aka nickname
 ---
+{% include JB/setup %}
 
-<div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+<!-- Change the "about information" contained in /_includes/themes/bootstrap/index.html  -->
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  {% for post in site.posts %}
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+                <!-- Blog Post Template on Index page -->
+                <h2>
+                    <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+                </h2>
+                <p class="lead">
+                    Tagged under: {{post.tags | array_to_sentence_string}}
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.date | date_to_string }}</p>
+                <!-- <hr>
+                <img class="img-responsive" src="http://placehold.it/900x300" alt=""> -->
+                <hr>
+		{{ post.excerpt }}                
+                <a class="btn btn-primary" href="{{ BASE_PATH }}{{ post.url }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+                <hr>
 
-</div>
+  {% endfor %}
+
+
