@@ -1,21 +1,21 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://example.com" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: Hakan Blog
-  avatar: avatar.png
+  title: Hakan's Blog
+  avatar: brand.png
   gravatar: # Email MD5 hash
   description: "A website with blog posts and pages" # used by search engines
 
   # Header and footer text
   header_text: >
-                <p>Android</p>
+                <p>Welcome To Visit My Blog</p>
   header_text_feature_image:
   footer_text: >
-   Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+   Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type</a>
 
   # Icons
   rss: false
@@ -25,7 +25,7 @@ theme:
   dribbble:
   facebook:
   flickr:
-  github: "rohanchandra/type-theme"
+  github: "huanghaikai"
   google_plus:
   instagram:
   linkedin:  # Full URL
@@ -35,7 +35,7 @@ theme:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: "twitter"
+  twitter:
   wordpress:
   youtube:
 
@@ -54,10 +54,10 @@ theme:
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+  google_fonts: "Roboto:400,700,700italic,400italic"
 
   # Post navigation
-  post_navigation: false
+  post_navigation: true
 
 # PAGINATION
 paginate: 5
