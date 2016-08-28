@@ -1,0 +1,61 @@
+.post-tag {
+  display: inline-block;
+  background: rgba($text-color, 0.15);
+  padding: 0 .5rem;
+  margin-right: .5rem;
+  border-radius: 4px;
+  color: $text-color;
+  font-size: 1rem;
+  &:before {
+    content: "\f02b";
+    padding-right: .5em;
+  }
+  &:hover {
+    text-decoration: none;
+    background: $text-color;
+    color: $grey-color;
+  }
+}
+
+.tags-expo {
+  :target:before {
+    content:"";
+    display:block;
+    height:72px; /* fixed header height*/
+    margin:-72px 0 0; /* negative fixed header height */
+  }
+  .tags-expo-list {
+    @media (min-width: 38em) {
+      font-size: 1rem;
+      .post-tag {
+        margin: .2em .3em;
+      }
+    }
+  }
+  .tags-expo-section {
+    ul {
+      list-style-type: circle;
+      list-style-position: inside;
+      padding: 0 2rem;
+      li {
+        padding: 0 2rem;
+        font-size: 1.2rem;
+        &:hover {
+          list-style-type: disc;
+          padding: 0 .5rem;
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    .post-date {
+      display: inline-block;
+      font-size: 1rem;
+      color: $grey-color;
+      margin: 0;
+      padding: 0;
+    }
+    font-family: $base-font-family;
+  }
+}

@@ -1,9 +1,12 @@
-{% if site.theme.katex %}
-<script src="{{ "/js/katex_init.js" | prepend: site.baseurl }}"></script>
+{% if site.ads %}
+<div class="banner-wrapper">
+  {% include ad.html %}
+</div>
 {% endif %}
-
-{% if site.theme.footer_text %}
-<footer class="site-footer">
-	<p class="text">{{ site.theme.footer_text }}</p>
+<footer class="site-footer" align="center">
+  <div class="wrapper">
+      <!-- <div class="copy" >
+          {{ site.time | date: '%Y' }} &copy; {{ site.title }}
+      </div> -->
+  </div>
 </footer>
-{% endif %}

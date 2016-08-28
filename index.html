@@ -3,50 +3,26 @@ layout: default
 ---
 
 <div class="home">
-  {% if site.theme.header_text %}
-  <div class="call-out" 
-  style="background-image: url('{{ site.baseurl }}/{{ site.theme.header_text_feature_image }}')">
-    {{ site.theme.header_text }}
-  </div>
-  {% endif %}
-
-  <div class="posts">
+  <h1 class="page-heading">Posts</h1>
+  <ul class="post-list">
     {% for post in paginator.posts %}
-    <div class="post-teaser">
-      <header>
-        <h1>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-            {{ post.title }}
-          </a>
-        </h1>
-        <p class="meta">
-          {{ post.date | date: "%B %-d, %Y" }}
-        </p>
-      </header>
-      <div class="excerpt">
-        {{ post.excerpt }}
-        <a class="button" href="{{ post.url | prepend: site.baseurl }}">
-          {{ site.theme.str_continue_reading }}
-        </a>
-      </div>
-    </div>
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <p class="description">
+            {% if post.description %}
+                {{ post.description | strip_html | strip_newlines | truncate: 250 }}
+            {% else %}
+                {{ post.content | strip_html | strip_newlines | truncate: 250 }}
+            {% endif %}</p>
+      </li>
     {% endfor %}
-  </div>
-
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button" >
-      <i class="fa fa-chevron-left"></i>
-      {{ site.theme.str_prev }}
-    </a>
-    {% endif %}
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button" >
-      {{ site.theme.str_next }}
-      <i class="fa fa-chevron-right"></i>
-    </a>
-    {% endif %}
-  </div>
-  {% endif %}
+  </ul>
 </div>
+{% if paginator.total_pages > 1 %}<!-- Pagination links -->
+  <div class="pagination">
+    {% if paginator.previous_page %} <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="prev">Newer Posts -></a> {% endif %}
+    {% if paginator.next_page %} <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next"><- Older Posts</a>{% endif %}
+  </div>{% endif %}

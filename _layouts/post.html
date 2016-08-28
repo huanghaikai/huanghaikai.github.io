@@ -1,42 +1,54 @@
 ---
 layout: default
 ---
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
-  <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
-    <h1 class="title">{{ page.title }}</h1>
-    <p class="meta">
-    {{ page.date | date: "%B %-d, %Y" }}
-    {% if page.author %} - {{ page.author }}{% endif %}
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta">
+       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: "%b %-d, %Y" }}
+       </time>
+       {% if page.author %} |
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">{{ page.author }}</span>
+          </span>
+       {% endif %}
+        | <span class="time">
+            {{ page.content | number_of_words | divided_by:180 }}
+          </span>
+           Minute Read
     </p>
   </header>
-  <section class="post-content">{{ content }}</section>
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+  <footer class="post-footer">
+
+    <!-- Social Share Button-->
+    <!-- <ul class="sharebutton">
+      <li class="share">Share :</li>
+      <li class="fb">
+        <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;">Facebook</a>
+      </li>
+      <li class="linkedin">
+        <a href="http://www.linkedin.com/cws/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title="Share on Linkedin">Linkedin</a>
+      </li>
+      <li class="twitter">
+        <a href="https://twitter.com/intent/tweet?text={{ page.url | prepend: site.baseurl | prepend: site.url }} - {{page.title}} by @{{ site.twitter.username }}" target="_blank" title="Share to Twitter">Twitter</a>
+      </li>
+      <li class="gplus">
+        <a href="https://plus.google.com/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href,&quot;popupwindow&quot;,&quot;status=0,height=500,width=700,resizable=0,top=50,left=100&quot;);return false;" target="_blank" title="Share on Google Plus">Google+</a>
+      </li>
+      <li class="pinterest">
+        <a href="http://pinterest.com/pin/create/link/?url={{ page.url | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share to Pinterest">Pinterest</a>
+      </li>
+    </ul> -->
+
+    <!-- Post Navigation -->
+    <div class="post-navigation">
+      {% if page.previous.url %}<a class="prev" href="{{ page.previous.url | prepend: site.baseurl }}">←&nbsp;Previous Post</a>{% endif %}
+      {% if page.next.url %}<a class="next" href="{{ page.next.url | prepend: site.baseurl }}">Next Post&nbsp;→</a>{% endif %}
+    </div>
+      {% include comment.html %}
+  </footer>
 </article>
-
-<!-- Post navigation -->
-{% if site.theme.post_navigation %}
-<div id="post-nav">
-    {% if page.previous.url %}
-    <a id="prev-post" href="{{ site.baseurl }}{{ page.previous.url }}">
-      <span class="page-title">{{ page.previous.title }}</span>
-      <span class="nav-label">
-        <i class="fa fa-chevron-left"></i> {{ site.theme.str_prev }}
-      </span>
-    </a>
-    {% endif %}
-    {% if page.next.url %}
-    <a id="next-post" href="{{ site.baseurl }}{{ page.next.url }}">
-       <span class="page-title">{{ page.next.title }}</span>
-       <span class="nav-label">
-        {{ site.theme.str_next }} <i class="fa fa-chevron-right"></i>
-       </span>
-     </a>
-    {% endif %}
-</div>
-{% endif %}
-
-<!-- Disqus -->
-{% if site.theme.disqus_shortname %}
-<div class="comments">
-  {% include disqus.html %}
-</div>
-{% endif %}
