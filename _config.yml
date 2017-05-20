@@ -15,8 +15,11 @@ picture: assets/images/profile.jpg
 
 permalink: /:title/
 
-markdown: kramdown
 highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
@@ -43,9 +46,9 @@ github: huanghaikai
 email: huanghaikai@gmail.com
 
 authors:
-    johndoe:
-        name: John Doe
-        bio: A Man who travels the world eating noodles
+    huanghaikai:
+        name: Huang Hakai
+        bio: A Man who loves coding
         external-image: false
         picture: assets/images/profile.jpg
         twitter: huanghaikai
@@ -106,4 +109,4 @@ gems:
 jekyll-mentions:
     base_url: https://github.com
 
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, indigo-gh-pages.zip, Rakefile, screen-shot.png, travis.sh, tasks]
+exclude: [README.md, Gemfile, Gemfile.lock, _site, src, CNAME]

@@ -1,0 +1,54 @@
+---
+title: "New Test"
+layout: post
+date: 2017-05-20 18:48
+tag:
+- markdown
+- components
+- extra
+blog: true
+description: Markdown summary with different options
+---
+
+
+
+## test
+
+{% highlight html %}
+
+public static void main(String[] args){
+	System.out.println("Hello World");
+}
+
+{% endhighlight %}
+
+```java
+public static void main(String[] args){
+	System.out.println("Hello World");
+}
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Just a test</h1>
+</body>
+</html>
+```
+```javascript
+// Sticky Header
+$(window).scroll(function() {
+
+    if ($(window).scrollTop() > 900 && !$("body").hasClass('show-menu')) {
+        $('#hamburguer__open').fadeOut('fast');
+    } else if (!$("body").hasClass('show-menu')) {
+        $('#hamburguer__open').fadeIn('fast');
+    }
+
+});
+```
