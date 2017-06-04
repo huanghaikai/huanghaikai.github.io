@@ -63,6 +63,12 @@ You can try the evidence!
 
 Like the [Medium](https://medium.com/) component.
 
+
+![单例UML]({{ site.url }}/asserts/images/design-pattern/singleton.png)
+
+
+
+
 **Image** on the left and **Text** on the right:
 
 {% highlight html %}
