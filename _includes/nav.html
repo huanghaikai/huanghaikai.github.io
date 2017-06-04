@@ -22,6 +22,16 @@
             {% endif %}
         {% endif %}
 
+        <!-- show category -->
+        {% if page.title == "Home" %}
+        {% elsif page.title == "Categories" %}
+        {% else %}
+          <li class="item">
+              <a class="link" href="{{ site.url }}/categories">Category</a>
+            </li>
+        {% endif %}
+
+
         {% if site.about == true %}
             {% if page.title != "About" %}
                 <li class="item">
@@ -29,5 +39,10 @@
                 </li>
             {% endif %}
         {% endif %}
+
+
+
+
+
     </ul>
 </nav>

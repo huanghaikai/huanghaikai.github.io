@@ -9,6 +9,7 @@ tag:
 - components
 - extra
 - text
+category: Vim教程
 blog: true
 author: huanghaikai
 description: Markdown summary with different options
