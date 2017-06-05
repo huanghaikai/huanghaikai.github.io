@@ -5,7 +5,7 @@ date: 2017-05-31 18:48
 tag:
 - design pattern
 - java
-category: design pattern
+category: Design Pattern
 blog: true
 description: java design pattern singleton 设计模式 单例模式
 ---
@@ -56,9 +56,10 @@ public class HungrySingleton {
     }
 }
 ```
+
 这种写法可以达到单例的目的,保证了多线程下的线程安全问题,但是这种单例的写法存在问题.在执行` HungrySingleton.doTest();`之后输出的结果如下
 
-```java
+```
 HungrySingleton created
 doTest
 ```
