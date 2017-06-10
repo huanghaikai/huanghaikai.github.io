@@ -11,6 +11,10 @@ layout: page
 
 喜欢酷炫的新技术,爱折腾,爱运动,喜欢交朋友.酷爱Linux,是一个有趣的人.
 
+现在业余时间参与了Linux发行版openSUSE的中文Wiki部分页面的翻译和维护.
+
+欢迎使用[openSUSE](https://www.opensuse.org/)发行版.
+
 ### About Blog
 这个博客主要是记录工作学习的点点滴滴,防止学了之后又忘记了
 
