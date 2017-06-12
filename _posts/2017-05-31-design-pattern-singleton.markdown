@@ -15,8 +15,7 @@ description: java design pattern singleton 设计模式 单例模式
 
 ### 单例模式UML类图
 
-![单例UML]({{ site.url }}/assets/images/design-pattern/singleton.png){: align="center" }
-
+![单例UML]({{ site.url }}/assets/images/design-pattern/singleton.png)
 
 ### 单例的特点
 1. 私有的构造函数
