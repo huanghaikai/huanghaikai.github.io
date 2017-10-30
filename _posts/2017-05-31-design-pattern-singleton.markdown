@@ -137,7 +137,7 @@ public class StaticInnerSingleton {
         private static final StaticInnerSingleton INSTANCE = new StaticInnerSingleton();
     }
 
-    public StaticInnerSingleton getInstance() {
+    public static StaticInnerSingleton getInstance() {
         return SingletonHolder.INSTANCE;
     }
 }
